@@ -3,17 +3,17 @@ import java.util.Scanner;
 public class Test {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("introduce el primer numero");
+        System.out.println("write the first number");
         int x = sc.nextInt();
-        System.out.println("introduce el segundo numero");
+        System.out.println("write the second number");
         int y = sc.nextInt();
-        System.out.println("El resultado de la suma es " + sumar(x,y));
+        System.out.println("the result of the add is " + add(x,y));
         Runnable runnable = new MultiThread(x,y);
         Thread thread = new Thread(runnable);
         thread.start();
     }
 
-    public static int sumar(int x, int y){
+    public static int add(int x, int y){
         int result = x + y ;
         return result;
 
@@ -31,6 +31,6 @@ class MultiThread implements  Runnable{
     @Override
     public void run() {
         int result = x - y ;
-        System.out.println("El resultado de la resta es " + result);
+        System.out.println("the result of the substract is " + result);
     }
 }
